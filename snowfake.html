@@ -15,6 +15,8 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -137,10 +139,10 @@ What happens depends on how many neighbours a site has.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="snowfake.snowfake.Snowfake.diffusion">
 <span class="sig-name descname"><span class="pre">diffusion</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/snowfake/snowfake.html#Snowfake.diffusion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#snowfake.snowfake.Snowfake.diffusion" title="Permalink to this definition"></a></dt>
-<dd><p>“Diffusive mass evolves on A^c_t (non-crystal) by discrete diffusion with
+<dd><p>“Diffusive mass evolves on <span class="math notranslate nohighlight">\(\mathbf{A^c_t}\)</span> (non-crystal) by discrete diffusion with
 uniform weight 1/7 on the center site and each of its neighbors […]
-and for x ∈ ∂A_t (boundary) any term in the sum corresponding to y ∈ A_t is
-replaced by d°(x) [i.e. the value before step].”</p>
+and for <span class="math notranslate nohighlight">\(\mathbf{x ∈ ∂A_t}\)</span> (boundary) any term in the sum corresponding to
+<span class="math notranslate nohighlight">\(\mathbf{y ∈ ∂A_t}\)</span> is replaced by <span class="math notranslate nohighlight">\(\mathbf{d°(x)}\)</span> [i.e. the value before step].”</p>
 </dd></dl>
 
 <dl class="py method">

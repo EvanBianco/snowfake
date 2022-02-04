@@ -245,10 +245,10 @@
 
 <div class="viewcode-block" id="Snowfake.diffusion"><a class="viewcode-back" href="../../snowfake.html#snowfake.snowfake.Snowfake.diffusion">[docs]</a>    <span class="k">def</span> <span class="nf">diffusion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        &quot;Diffusive mass evolves on A^c_t (non-crystal) by discrete diffusion with</span>
+<span class="sd">        &quot;Diffusive mass evolves on :math:`\mathbf{A^c_t}` (non-crystal) by discrete diffusion with</span>
 <span class="sd">        uniform weight 1/7 on the center site and each of its neighbors [...]</span>
-<span class="sd">        and for x ∈ ∂A_t (boundary) any term in the sum corresponding to y ∈ A_t is</span>
-<span class="sd">        replaced by d°(x) [i.e. the value before step].&quot;</span>
+<span class="sd">        and for :math:`\mathbf{x ∈ ∂A_t}` (boundary) any term in the sum corresponding to </span>
+<span class="sd">        :math:`\mathbf{y ∈ ∂A_t}` is replaced by :math:`\mathbf{d°(x)}` [i.e. the value before step].&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">d_</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NBR</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span> <span class="n">boundary</span><span class="o">=</span><span class="s1">&#39;symm&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)</span>  <span class="c1"># Eq 1.</span>
         <span class="n">d_</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>  <span class="c1"># To eliminate crystal.</span>
