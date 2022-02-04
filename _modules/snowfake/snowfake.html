@@ -248,7 +248,7 @@
 <span class="sd">        &quot;Diffusive mass evolves on :math:`\mathbf{A^c_t}` (non-crystal) by discrete diffusion with</span>
 <span class="sd">        uniform weight 1/7 on the center site and each of its neighbors [...]</span>
 <span class="sd">        and for :math:`\mathbf{x ∈ ∂A_t}` (boundary) any term in the sum corresponding to </span>
-<span class="sd">        :math:`\mathbf{y ∈ ∂A_t}` is replaced by :math:`\mathbf{d°(x)}` [i.e. the value before step].&quot;</span>
+<span class="sd">        :math:`\mathbf{y ∈ ∂A_t}` is replaced by :math:`\mathbf{d°(x)}` (i.e. the value before step).&quot;</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">d_</span> <span class="o">=</span> <span class="n">convolve2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">NBR</span> <span class="o">/</span> <span class="mi">7</span><span class="p">,</span> <span class="n">boundary</span><span class="o">=</span><span class="s1">&#39;symm&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;same&#39;</span><span class="p">)</span>  <span class="c1"># Eq 1.</span>
         <span class="n">d_</span> <span class="o">*=</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span>  <span class="c1"># To eliminate crystal.</span>
@@ -258,7 +258,7 @@
 <div class="viewcode-block" id="Snowfake.freezing"><a class="viewcode-back" href="../../snowfake.html#snowfake.snowfake.Snowfake.freezing">[docs]</a>    <span class="k">def</span> <span class="nf">freezing</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        &quot;Proportion κ of the diffusive mass at each boundary site crystallizes.</span>
-<span class="sd">        The remainder (proportion 1 − κ) becomes boundary mass.&quot;</span>
+<span class="sd">        The remainder (proportion :math:`\mathbf{1 - κ}`) becomes boundary mass.&quot;</span>
 <span class="sd">        We control the &#39;boundaryness&#39; with the boundary array.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">boundary</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">κ</span><span class="p">)</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span>  <span class="c1"># Eq 2a.</span>
