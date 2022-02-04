@@ -46,13 +46,13 @@
 <span class="sd">Licence: Apache 2.0</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">convolve2d</span>  <span class="c1"># Could replace w numpy?</span>
-<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="kn">import</span> <span class="n">affine_transform</span>  <span class="c1"># Could replace??</span>
-<span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="k">import</span> <span class="n">convolve2d</span>  <span class="c1"># Could replace w numpy?</span>
+<span class="kn">from</span> <span class="nn">scipy.ndimage</span> <span class="k">import</span> <span class="n">affine_transform</span>  <span class="c1"># Could replace??</span>
+<span class="kn">from</span> <span class="nn">tqdm</span> <span class="k">import</span> <span class="n">tqdm</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">partial</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">skimage</span> <span class="kn">import</span> <span class="n">transform</span>
+    <span class="kn">from</span> <span class="nn">skimage</span> <span class="k">import</span> <span class="n">transform</span>
 <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
     <span class="n">_has_skimage</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="k">else</span><span class="p">:</span>
@@ -78,21 +78,21 @@
 <span class="sd">    at various times.</span>
 
 <span class="sd">    Example to reproduce Figure 15b in Gravner &amp; Griffeath (2008):</span>
-<span class="sd">    &gt;&gt;&gt; from snowfake import Snowfake</span>
-<span class="sd">    &gt;&gt;&gt; params =   {</span>
-<span class="sd">        &#39;ρ&#39;: 0.35,</span>
-<span class="sd">        &#39;β&#39;: 1.4,</span>
-<span class="sd">        &#39;α&#39;: 0.001,</span>
-<span class="sd">        &#39;θ&#39;: 0.015,</span>
-<span class="sd">        &#39;κ&#39;: 0.05,</span>
-<span class="sd">        &#39;μ&#39;: 0.015,</span>
-<span class="sd">        &#39;γ&#39;: 0.01,</span>
-<span class="sd">        &#39;σ&#39;: 0.00005,</span>
-<span class="sd">        &#39;random&#39;: False,</span>
-<span class="sd">    }</span>
-<span class="sd">    &gt;&gt;&gt; s = Snowfake(801, **params)</span>
-<span class="sd">    &gt;&gt;&gt; s.grow()</span>
-<span class="sd">    &gt;&gt;&gt; s.plot()</span>
+<span class="sd">        &gt;&gt;&gt; from snowfake import Snowfake</span>
+<span class="sd">        &gt;&gt;&gt; params =   {</span>
+<span class="sd">            &#39;ρ&#39;: 0.35,</span>
+<span class="sd">            &#39;β&#39;: 1.4,</span>
+<span class="sd">            &#39;α&#39;: 0.001,</span>
+<span class="sd">            &#39;θ&#39;: 0.015,</span>
+<span class="sd">            &#39;κ&#39;: 0.05,</span>
+<span class="sd">            &#39;μ&#39;: 0.015,</span>
+<span class="sd">            &#39;γ&#39;: 0.01,</span>
+<span class="sd">            &#39;σ&#39;: 0.00005,</span>
+<span class="sd">            &#39;random&#39;: False,</span>
+<span class="sd">        }</span>
+<span class="sd">        &gt;&gt;&gt; s = Snowfake(801, **params)</span>
+<span class="sd">        &gt;&gt;&gt; s.grow()</span>
+<span class="sd">        &gt;&gt;&gt; s.plot()</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">NBR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
@@ -103,7 +103,7 @@
                     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
                     <span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">random</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Args</span>
 <span class="sd">        size (int): The size in hex pixels of the 2D space.</span>
@@ -171,15 +171,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_boundary_changed</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="k">return</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">string</span>  <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Snowfake(size=</span><span class="si">{self._size}</span><span class="s2">, random=</span><span class="si">{self._random}</span><span class="s2">, &quot;</span>
-        <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;ρ=</span><span class="si">{self.ρ}</span><span class="s2">, β=</span><span class="si">{self.β}</span><span class="s2">, α=</span><span class="si">{self.α}</span><span class="s2">, θ=</span><span class="si">{self.θ}</span><span class="s2">, &quot;</span>
-        <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;κ=</span><span class="si">{self.κ}</span><span class="s2">, μ=</span><span class="si">{self.μ}</span><span class="s2">, γ=</span><span class="si">{self.γ}</span><span class="s2">, σ=</span><span class="si">{self.σ}</span><span class="s2">)&quot;</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">string</span>  <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;Snowfake(size=</span><span class="si">{self._size}</span><span class="s2">, random=</span><span class="si">{self._random}</span><span class="s2">, &quot;</span>
+        <span class="n">string</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;ρ=</span><span class="si">{self.ρ}</span><span class="s2">, β=</span><span class="si">{self.β}</span><span class="s2">, α=</span><span class="si">{self.α}</span><span class="s2">, θ=</span><span class="si">{self.θ}</span><span class="s2">, &quot;</span>
+        <span class="n">string</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;κ=</span><span class="si">{self.κ}</span><span class="s2">, μ=</span><span class="si">{self.μ}</span><span class="s2">, γ=</span><span class="si">{self.γ}</span><span class="s2">, σ=</span><span class="si">{self.σ}</span><span class="s2">)&quot;</span>
         <span class="k">return</span> <span class="n">string</span>
 
 <div class="viewcode-block" id="Snowfake.status"><a class="viewcode-back" href="../../snowfake.html#snowfake.snowfake.Snowfake.status">[docs]</a>    <span class="k">def</span> <span class="nf">status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">string</span>  <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Snowfake(size=</span><span class="si">{self._size}</span><span class="s2">, random=</span><span class="si">{self._random}</span><span class="s2">, &quot;</span>
-        <span class="n">string</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;epochs=</span><span class="si">{self._epochs}</span><span class="s2">, attachments={int(self.a.sum())})&quot;</span>
+        <span class="n">string</span>  <span class="o">=</span> <span class="n">f</span><span class="s2">&quot;Snowfake(size=</span><span class="si">{self._size}</span><span class="s2">, random=</span><span class="si">{self._random}</span><span class="s2">, &quot;</span>
+        <span class="n">string</span> <span class="o">+=</span> <span class="n">f</span><span class="s2">&quot;epochs=</span><span class="si">{self._epochs}</span><span class="s2">, attachments={int(self.a.sum())})&quot;</span>
         <span class="k">return</span> <span class="n">string</span></div>
     
     <span class="nd">@property</span>
@@ -385,7 +385,7 @@
                 <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">perturb</span><span class="p">()</span>  <span class="c1"># Noise or bias.</span>
 
             <span class="c1"># Some conveniences:</span>
-            <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;{int(self.a.sum()):7d} attachments&#39;</span><span class="p">)</span>
+            <span class="n">pbar</span><span class="o">.</span><span class="n">set_description</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;{int(self.a.sum()):7d} attachments&#39;</span><span class="p">)</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">early_stopping</span> <span class="ow">and</span> <span class="p">(</span><span class="n">epoch</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
                 <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">early_stopping</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">_size</span><span class="p">:</span>
                     <span class="k">break</span>
@@ -454,10 +454,6 @@
 
 
 <h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../readme.html">snowfake</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">API:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../snowfake.html">snowfake package</a></li>

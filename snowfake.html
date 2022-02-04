@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>snowfake package &#8212; snowfake 0.1 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
@@ -14,7 +15,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="snowfake" href="readme.html" />
+    <link rel="prev" title="Welcome to snowfake" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -31,9 +32,9 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="snowfake-package">
+  <section id="snowfake-package">
 <h1>snowfake package<a class="headerlink" href="#snowfake-package" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="module-snowfake.snowfake">
+<section id="module-snowfake.snowfake">
 <span id="the-snowfake-class"></span><h2>The <cite>snowfake</cite> class<a class="headerlink" href="#module-snowfake.snowfake" title="Permalink to this headline">¶</a></h2>
 <p>Make Gravner-Griffeath snowfakes.</p>
 <p>Implementing:
@@ -52,24 +53,26 @@ Licence: Apache 2.0</p>
 of Gravner &amp; Griffeath’s algorithm. This class holds all of the state,
 so you can grow it in stages, eg changing some of the parameters
 at various times.</p>
-<p>Example to reproduce Figure 15b in Gravner &amp; Griffeath (2008):
-&gt;&gt;&gt; from snowfake import Snowfake
-&gt;&gt;&gt; params =   {</p>
-<blockquote>
-<div><p>‘ρ’: 0.35,
-‘β’: 1.4,
-‘α’: 0.001,
-‘θ’: 0.015,
-‘κ’: 0.05,
-‘μ’: 0.015,
-‘γ’: 0.01,
-‘σ’: 0.00005,
-‘random’: False,</p>
-</div></blockquote>
-<p>}
-&gt;&gt;&gt; s = Snowfake(801, <a href="#id1"><span class="problematic" id="id2">**</span></a>params)
-&gt;&gt;&gt; s.grow()
-&gt;&gt;&gt; s.plot()</p>
+<dl>
+<dt>Example to reproduce Figure 15b in Gravner &amp; Griffeath (2008):</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">snowfake</span> <span class="k">import</span> <span class="n">Snowfake</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">params</span> <span class="o">=</span>   <span class="p">{</span>
+<span class="go">    &#39;ρ&#39;: 0.35,</span>
+<span class="go">    &#39;β&#39;: 1.4,</span>
+<span class="go">    &#39;α&#39;: 0.001,</span>
+<span class="go">    &#39;θ&#39;: 0.015,</span>
+<span class="go">    &#39;κ&#39;: 0.05,</span>
+<span class="go">    &#39;μ&#39;: 0.015,</span>
+<span class="go">    &#39;γ&#39;: 0.01,</span>
+<span class="go">    &#39;σ&#39;: 0.00005,</span>
+<span class="go">    &#39;random&#39;: False,</span>
+<span class="go">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">Snowfake</span><span class="p">(</span><span class="mi">801</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">grow</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="snowfake.snowfake.Snowfake.BDY">
 <span class="sig-name descname"><span class="pre">BDY</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([[</span> <span class="pre">0,</span>&#160; <span class="pre">1,</span>&#160; <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">1,</span> <span class="pre">-7,</span>&#160; <span class="pre">1],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">1,</span>&#160; <span class="pre">1,</span>&#160; <span class="pre">0]])</span></em><a class="headerlink" href="#snowfake.snowfake.Snowfake.BDY" title="Permalink to this definition">¶</a></dt>
@@ -206,11 +209,11 @@ rho parameter.</p>
 <dd><p>Returns a random snowfake.</p>
 </dd></dl>
 
-<div class="section" id="module-snowfake">
+<section id="module-snowfake">
 <span id="module-contents"></span><h3>Module contents<a class="headerlink" href="#module-snowfake" title="Permalink to this headline">¶</a></h3>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -229,10 +232,6 @@ rho parameter.</p>
 
 
 <h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Getting Started:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="readme.html">snowfake</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">API:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">snowfake package</a></li>
@@ -242,7 +241,7 @@ rho parameter.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="readme.html" title="previous chapter">snowfake</a></li>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to snowfake</a></li>
   </ul></li>
 </ul>
 </div>
