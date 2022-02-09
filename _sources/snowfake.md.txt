@@ -1,19 +1,21 @@
-snowfake package
-================
+# snowfake package
 
-The `snowfake` class
-********************
+## Submodules
 
+## snowfake.snowfake module
+
+```{eval-rst}
 .. automodule:: snowfake.snowfake
    :members:
    :undoc-members:
    :show-inheritance:
-   
+```
 
-Module contents
----------------
+## Module contents
 
+```{eval-rst}
 .. automodule:: snowfake
    :members:
    :undoc-members:
    :show-inheritance:
+```
