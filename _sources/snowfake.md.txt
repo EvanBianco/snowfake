@@ -10,12 +10,3 @@
    :undoc-members:
    :show-inheritance:
 ```
-
-## Module contents
-
-```{eval-rst}
-.. automodule:: snowfake
-   :members:
-   :undoc-members:
-   :show-inheritance:
-```
